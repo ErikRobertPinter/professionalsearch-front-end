@@ -2,13 +2,14 @@
   <div class="panel">
     <h1>Bejelentkezés</h1>
     <form action="">
-      <label for="">Email cím:</label><br />
-      <input type="text" /><br />
-      <label for="">Jelszó:</label><br />
-      <input type="text" /><br />
+      <label for="email">Email cím:</label><br />
+      <input id="email" name="email" type="text" autocomplete="on" /><br />
+      <label for="pwd">Jelszó:</label><br />
+      <input id="pwd" name="pwd" type="text" autocomplete="on" /><br />
       <button>Bejelentkezés</button>
     </form>
     <a routerLink="/dashboard"></a>
     <p><a routerLink="/forgot-password">Elfelejtettem a jelszavam</a></p>
+    <p><a routerLink="/signup">Még nincs fiókom, regisztrálok!</a></p>
   </div>
 </div>

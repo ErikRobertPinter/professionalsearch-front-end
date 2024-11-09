@@ -1,0 +1,21 @@
+<h1>Projekt hozzáadása</h1>
+<form [formGroup]="addProject" (ngSubmit)="onSubmit()">
+  <label for="title">Cím:</label><br />
+  <input id="title" name="title" type="text" formControlName="title" /><br />
+  <label for="description">Leírás:</label><br />
+  <textarea
+    name="description"
+    id="description"
+    formControlName="description"
+  ></textarea
+  ><br />
+  <label for="address">Cím:</label><br />
+  <input
+    id="address"
+    name="address"
+    type="text"
+    formControlName="address"
+  /><br />
+  <button type="submit">Projekt hozzáadása</button>
+</form>
+<button (click)="asdf()">asdf</button>

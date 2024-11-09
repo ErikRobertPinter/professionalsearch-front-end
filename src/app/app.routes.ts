@@ -83,6 +83,13 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'add-project',
+        loadChildren: () =>
+          import('./private/add-project/add-project.module').then(
+            (m) => m.AddProjectModule
+          ),
+      },
+      {
         path: 'profile',
         loadChildren: () =>
           import('./private/profile/profile.module').then(
