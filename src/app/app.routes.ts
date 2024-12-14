@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { PublicLayoutComponent } from './public/public-layout/public-layout.component';
-import { PrivateLayoutComponent } from './private/private-layout/private-layout.component';
+import { ProfessionalLayoutComponent } from './private/professional/professional-layout/professional-layout.component';
 
 export const routes: Routes = [
   //public routes
@@ -57,7 +57,7 @@ export const routes: Routes = [
     ],
   },
   //private routes
-  {
+  /*{
     path: '',
     component: PrivateLayoutComponent,
     children: [
@@ -69,18 +69,31 @@ export const routes: Routes = [
           ),
       },
       {
-        path: 'professional-dashboard',
-        loadChildren: () =>
-          import(
-            './private/professional-dashboard/professional-dashboard.module'
-          ).then((m) => m.ProfessionalDashboardModule),
-      },
-      {
         path: 'admin-dashboard',
         loadChildren: () =>
           import('./private/admin-dashboard/admin-dashboard.module').then(
             (m) => m.AdminDashboardModule
           ),
+      },
+      {
+        path: 'professional-layout',
+        component: ProfessionalLayoutComponent,
+        children: [
+          {
+            path: 'professional-dashboard',
+            loadChildren: () =>
+              import(
+                './private/professional/professional-dashboard/professional-dashboard.module'
+              ).then((m) => m.ProfessionalDashboardModule),
+          },
+          {
+            path: 'job',
+            loadChildren: () =>
+              import('./private/professional/job/job.module').then(
+                (m) => m.JobModule
+              ),
+          },
+        ],
       },
       {
         path: 'add-project',
@@ -100,6 +113,48 @@ export const routes: Routes = [
         path: 'settings',
         loadChildren: () =>
           import('./private/settings/settings.module').then(
+            (m) => m.SettingsModule
+          ),
+      },
+    ],
+  },*/
+  //professional-layout
+  {
+    path: '',
+    component: ProfessionalLayoutComponent,
+    children: [
+      {
+        path: 'professional-dashboard',
+        loadChildren: () =>
+          import(
+            './private/professional/professional-dashboard/professional-dashboard.module'
+          ).then((m) => m.ProfessionalDashboardModule),
+      },
+      {
+        path: 'job',
+        loadChildren: () =>
+          import('./private/professional/job/job.module').then(
+            (m) => m.JobModule
+          ),
+      },
+      {
+        path: 'job/:id/:title',
+        loadChildren: () =>
+          import('./private/professional/jobs/job-view/job-view.module').then(
+            (m) => m.JobViewModule
+          ),
+      },
+      {
+        path: 'profile',
+        loadChildren: () =>
+          import('./private/professional/profile/profile.module').then(
+            (m) => m.ProfileModule
+          ),
+      },
+      {
+        path: 'settings',
+        loadChildren: () =>
+          import('./private/professional/settings/settings.module').then(
             (m) => m.SettingsModule
           ),
       },

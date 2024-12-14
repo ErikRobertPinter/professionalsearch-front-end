@@ -42,3 +42,24 @@ body {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.delete-button {
+  min-width: 10%;
+  min-height: 3vh;
+  border: 0;
+  background-color: red;
+  color: white;
+}
+.ok-button {
+  min-width: 10%;
+  min-height: 3vh;
+  border: 0;
+  background-color: #39FF14;
+  color: black;
+}
+.close-button {
+  min-width: 10%;
+  min-height: 3vh;
+  border: 0;
+  background-color: #FBA405;
+  color: white;
+}

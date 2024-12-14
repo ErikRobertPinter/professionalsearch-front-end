@@ -1,0 +1,14 @@
+<img src="./../../../assets/media/pictures/profilepic.jpg" alt="" />
+<form [formGroup]="profileForm" (ngSubmit)="updateProfile()">
+  <h3>Vezetéknév</h3>
+  <input type="text" formControlName="surname" />
+  <h3>Keresztnév</h3>
+  <input type="text" formControlName="firstname" />
+  <h3>Email cím:</h3>
+  <input type="text" formControlName="email" />
+  <h3>Telefonszám:</h3>
+  <input type="text" formControlName="phoneNumber" />
+  <h3>Jelszó:</h3>
+  <input type="text" formControlName="password" /><br />
+  <button type="submit">Módosítások mentése</button>
+</form>

@@ -1,0 +1,13 @@
+<div class="main">
+  @for (job of jobsList; track $index) {
+  <div class="job">
+    <img src="../../../../../assets/media/pictures/jobs/burkolat.jpg" alt="" />
+    <h4>{{ job.title }}</h4>
+    <h5>{{ job.address }}</h5>
+    <button (click)="opendeletiondialog()" class="delete-button">
+      Munka törlése
+    </button>
+    <button>Munka megtekintése</button>
+  </div>
+  }
+</div>

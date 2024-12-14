@@ -1,0 +1,27 @@
+<div class="main">
+  <div class="menu">
+    <ul>
+      <li><a href="">Főoldal</a></li>
+      <li><a href="">Profil</a></li>
+      <li><a href="">Kijelentkezés</a></li>
+      -
+    </ul>
+  </div>
+  <div class="content">
+    <h1>Üdv, {{ username }} a rendszerben</h1>
+    <form action="">
+      <input type="text" />
+      <button>Keresés</button>
+    </form>
+    <div class="list">
+      @for (professional of professionals; track $index) {
+      <div class="professional">
+        <img [src]="basePath + professional.img" alt="" />
+        <h3>{{ professional.name }}</h3>
+        <h4>{{ professional.title }}</h4>
+        <button>Adatlap megtekintése</button>
+      </div>
+      }
+    </div>
+  </div>
+</div>
