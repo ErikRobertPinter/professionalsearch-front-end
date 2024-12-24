@@ -1,1 +1,12 @@
-<p>user-layout works!</p>
+<div class="main">
+  <div class="menu">
+    <ul>
+      <li><a href="">Főoldal</a></li>
+      <li><a href="">Profil</a></li>
+      <li><a href="" (click)="logout()">Kijelentkezés</a></li>
+    </ul>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

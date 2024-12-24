@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { PublicLayoutComponent } from './public/public-layout/public-layout.component';
 import { ProfessionalLayoutComponent } from './private/professional/professional-layout/professional-layout.component';
+import { UserLayoutComponent } from './private/user/user-layout/user-layout.component';
 
 export const routes: Routes = [
   //public routes
@@ -138,7 +139,7 @@ export const routes: Routes = [
           ),
       },
       {
-        path: 'job/:id/:title',
+        path: 'job-view/:id',
         loadChildren: () =>
           import('./private/professional/jobs/job-view/job-view.module').then(
             (m) => m.JobViewModule
@@ -156,6 +157,19 @@ export const routes: Routes = [
         loadChildren: () =>
           import('./private/professional/settings/settings.module').then(
             (m) => m.SettingsModule
+          ),
+      },
+    ],
+  },
+  {
+    path: '',
+    component: UserLayoutComponent,
+    children: [
+      {
+        path: 'user-dashboard',
+        loadChildren: () =>
+          import('./private/user/user-dashboard/user-dashboard.module').then(
+            (m) => m.UserDashboardModule
           ),
       },
     ],

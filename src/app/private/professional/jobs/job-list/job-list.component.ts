@@ -3,8 +3,10 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ItemDeletionQuestionDialogComponent } from '../../../../@shared/item-deletion-question-dialog/item-deletion-question-dialog.component';
 import { HttpClient } from '@angular/common/http';
 import { filter, map } from 'rxjs';
+import { RouterLink } from '@angular/router';
 
 interface Job {
+  id: number;
   title: string;
   address: string;
   customer: string;
@@ -14,7 +16,7 @@ interface Job {
 @Component({
   selector: 'app-job-list',
   standalone: true,
-  imports: [MatDialogModule],
+  imports: [RouterLink, MatDialogModule],
   templateUrl: './job-list.component.html',
   styleUrl: './job-list.component.scss',
 })
