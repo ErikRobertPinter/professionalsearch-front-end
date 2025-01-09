@@ -1,24 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { MatTabsModule } from '@angular/material/tabs';
+import { ProfessionalSignupFormComponent } from '../SignupForms/professional-signup-form/professional-signup-form.component';
+import { UserSignupFormComponent } from '../SignupForms/user-signup-form/user-signup-form.component';
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [
+    ReactiveFormsModule,
+    CommonModule,
+    MatTabsModule,
+    ProfessionalSignupFormComponent,
+    UserSignupFormComponent,
+  ],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss',
 })
-export class SignupComponent {
-  userProfile: FormGroup;
-  constructor() {
-    this.userProfile = new FormGroup({
-      surname: new FormControl(''),
-      firstname: new FormControl(''),
-      email: new FormControl(''),
-      phoneNumber: new FormControl(''),
-      password: new FormControl(''),
-    });
-  }
-
-  onSubmit() {}
-}
+export class SignupComponent {}

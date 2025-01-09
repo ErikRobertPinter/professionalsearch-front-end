@@ -1,5 +1,6 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-professional-layout',
@@ -8,4 +9,30 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   templateUrl: './professional-layout.component.html',
   styleUrl: './professional-layout.component.scss',
 })
-export class ProfessionalLayoutComponent {}
+export class ProfessionalLayoutComponent {
+  api = 'http://127.0.0.1:8000/api/logout';
+  constructor(private http: HttpClient, private router: Router) {}
+  logout() {
+    const token = localStorage.getItem('auth_token');
+
+    const header = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Access: 'application/json',
+      Authorization: `Bearer ${token}`,
+    });
+    this.http.get(this.api, { headers: header }).subscribe({
+      next: (response: any) => {
+        if (token) {
+          localStorage.removeItem('auth_token');
+          console.log('Successfully logged out.');
+        } else {
+          console.log('Error, there is no token available.');
+        }
+        this.router.navigate(['/login']);
+      },
+      error: (error) => {
+        console.error('Hiba a logout során:', error);
+      },
+    });
+  }
+}

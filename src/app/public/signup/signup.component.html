@@ -1,16 +1,11 @@
+<h1>Regisztráció</h1>
 <div class="main">
-  <h1>Regisztráció</h1>
-  <form [formGroup]="userProfile" ngSubmit="onSubmit()">
-    <label for="surname">Vezetéknév:</label><br />
-    <input name="surname" type="text" formControlName="surname" /><br />
-    <label for="firstname">Keresztnév:</label><br />
-    <input name="firstname" type="text" formControlName="firstname" /><br />
-    <label for="email">Email cím:</label><br />
-    <input name="email" type="text" formControlName="email" /><br />
-    <label for="phoneNumber">Telefonszám</label><br />
-    <input name="phoneNumber" type="text" formControlName="phoneNumber" /><br />
-    <label for="pwd">Jelszó:</label><br />
-    <input name="pwd" type="text" formControlName="password" /><br />
-  </form>
+  <mat-tab-group>
+    <mat-tab label="Szakembert keresek"
+      ><app-user-signup-form></app-user-signup-form
+    ></mat-tab>
+    <mat-tab label="Szakember vagyok"
+      ><app-professional-signup-form></app-professional-signup-form
+    ></mat-tab>
+  </mat-tab-group>
 </div>
-<button (click)="onSubmit()">sacg</button>
