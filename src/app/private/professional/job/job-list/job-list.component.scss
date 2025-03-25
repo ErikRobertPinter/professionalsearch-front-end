@@ -1,0 +1,22 @@
+.main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 24%);
+    gap: 1%;
+    .job {
+        width: 100%;
+        height: 50vh;
+        background-color: aquamarine;
+        grid-template-rows: 40vh 10vh;
+        .picture {
+            grid-row-start: 1;
+            grid-row-start: 2;
+            background-color: red;
+        }
+        .content {
+            grid-row-start: 2;
+            grid-row-start: 3;
+            background-color: greenyellow;
+        }
+    }
+}

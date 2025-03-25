@@ -1,0 +1,50 @@
+
+.main {
+    width: 100%;
+    height: 300vh;
+    background-color: aquamarine;
+    .frontline {
+        width: 100%;
+        height: 80vh;
+        background-image: url('../../../assets/media/pictures/professionalsearch-background-picture.jpg');
+        .title {
+            position: absolute;
+            margin-top: 15%;
+            margin-left: 25%;
+            width: 50%;
+            height: 16vh;
+            text-align: center;
+            background-color: bisque;
+            border-radius: 20px; 
+            opacity: 0.8;
+        }
+        .searchfield {
+            position: absolute;
+            margin-top: 25%;
+            margin-left: 27%;
+            width: 50%;
+            height: 20vh;
+            border-radius: 20px;
+            input {
+                width: 30%;
+                height: 5vh;
+                border: 1px solid bisque;
+            }
+            button {
+                width: 30%;
+                height: 5.5vh;
+                background-color: bisque;
+                border: 0;
+            }
+        }
+    }
+    .professional-types {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: bisque;
+        h1 {
+            text-align: center;
+        }
+    }
+} 

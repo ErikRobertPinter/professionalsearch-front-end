@@ -1,0 +1,14 @@
+<div class="main">
+  <div class="menu">
+    <ul>
+      <li><a routerLink="/professional-dashboard">Dashboard</a></li>
+      <li><a routerLink="/professional-job-dashboard">Munkák</a></li>
+      <li><a routerLink="/professional-profile">Profil</a></li>
+      <li><a routerLink="/settings">Beállítások</a></li>
+      <li><a href="" (click)="logout()">Kijelentkezés</a></li>
+    </ul>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

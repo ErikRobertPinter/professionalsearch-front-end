@@ -1,0 +1,35 @@
+.main {
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F0FFFF;
+    .panel {
+        margin: 10% auto;
+        width: 60%;
+        height: 50vh;
+        background-color: bisque;
+        border-radius: 20px;
+        h1 {
+            text-align: center;
+        }
+        form label, form input {
+            margin-left: 10%;
+            width: 80%;
+            height: 2vh;
+
+        }
+        form button {
+            margin: 2% 35%;
+            width: 30%;
+            height: 3vh;
+        }
+        p {
+            text-align: center;
+            a {
+                text-decoration: none;
+                color: black;
+            }
+            
+        }
+    }
+}
