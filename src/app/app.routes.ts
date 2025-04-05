@@ -14,6 +14,13 @@ export const routes: Routes = [
           import('./public/home/home.module').then((m) => m.HomeModule),
       },
       {
+        path: 'professional-list',
+        loadChildren: () =>
+          import('./public/professional-list/professional-list.module').then(
+            (m) => m.ProfessionalListModule
+          ),
+      },
+      {
         path: 'login',
         loadChildren: () =>
           import('./public/login/login.module').then((m) => m.LoginModule),
@@ -31,11 +38,11 @@ export const routes: Routes = [
           ),
       },
       {
-        path: 'forgot-password',
+        path: 'new-password-successfully-created',
         loadChildren: () =>
-          import('./public/forgot-password/forgot-password.module').then(
-            (m) => m.ForgotPasswordModule
-          ),
+          import(
+            './public/new-password-created/new-password-created.module'
+          ).then((m) => m.NewPasswordCreatedModule),
       },
     ],
   },
