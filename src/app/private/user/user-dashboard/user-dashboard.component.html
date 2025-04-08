@@ -1,1 +1,23 @@
-<p>user-dashboard works!</p>
+<form [formGroup]="searchForm" (ngSubmit)="search()">
+  <input type="text" placeholder="Szakember..." formControlName="profession" />
+  <input
+    type="text"
+    placeholder="Település"
+    formControlName="settlement"
+  /><button>Keresés</button>
+</form>
+<div class="main">
+  @for (professional of professionals; track $index) {
+  <div class="professional">
+    <div class="profilepic">
+      <h1>{{ professional.id }}</h1>
+    </div>
+    <div class="datas">
+      <h1>{{ professional.surname }} {{ professional.firstname }}</h1>
+      <button [routerLink]="['/professional-user-view', professional.id]">
+        Adatlap megtekintése
+      </button>
+    </div>
+  </div>
+  }
+</div>

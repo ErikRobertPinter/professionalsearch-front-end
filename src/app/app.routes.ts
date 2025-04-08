@@ -92,6 +92,13 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'professional-user-view/:id',
+        loadChildren: () =>
+          import(
+            './private/user/professional-view/professional-view.module'
+          ).then((m) => m.ProfessionalViewModule),
+      },
+      {
         path: 'user-profile',
         loadChildren: () =>
           import('./private/user/user-profile/user-profile.module').then(

@@ -5,7 +5,6 @@ import { ProfessionalParamsServiceService } from '../../@shared/professional-par
 interface Professional {
   surname: string;
   firstname: string;
-  // más mezők, amiket az API válasza tartalmazhat
 }
 
 @Component({
@@ -22,12 +21,10 @@ export class ProfessionalListComponent {
   ) {}
 
   ngOnInit(): void {
-    // Megkapjuk a 'settlement' és 'profession' paramétereket az URL-ből
     this.route.queryParams.subscribe((params) => {
       const settlement = params['settlement'];
       const profession = params['profession'];
 
-      // Meghívjuk a service-t, hogy lekérjük az adatokat az API-ból
       this.professionalService.getResults(settlement, profession).subscribe(
         (data) => {
           this.professionals = data;
