@@ -1,1 +1,16 @@
-<p>admin-layout works!</p>
+<div class="main">
+  <div class="menu">
+    <nav>
+      <ul>
+        <li><a routerLink="admin-dashboard">Kezdőlap</a></li>
+        <li><a routerLink="post-list">Posztok</a></li>
+        <li><a routerLink="users-list">Felhasználók</a></li>
+        <li><a routerLink="admin-profile">Profil</a></li>
+        <li><a>Kijelentkezés</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

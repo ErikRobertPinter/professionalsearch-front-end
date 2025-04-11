@@ -1,0 +1,19 @@
+<table>
+  <tr>
+    <td>Azonosító</td>
+    <td>Vezetéknév</td>
+    <td>Keresztnév</td>
+    <td>Szakember</td>
+    <td>Admin</td>
+  </tr>
+  @for (user of users; track $index) {
+  <tr>
+    <td>{{ user.id }}</td>
+    <td>{{ user.surname }}</td>
+    <td>{{ user.firstname }}</td>
+    <td>{{ user.isProfessional }}</td>
+    <td>{{ user.isAdmin }}</td>
+    <td><button (click)="deleteUser(user.id)">Törlés</button></td>
+  </tr>
+  }
+</table>

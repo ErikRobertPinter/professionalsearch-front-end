@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { PublicLayoutComponent } from './public/public-layout/public-layout.component';
 import { ProfessionalLayoutComponent } from './private/professional/professional-layout/professional-layout.component';
 import { UserLayoutComponent } from './private/user/user-layout/user-layout.component';
+import { AdminLayoutComponent } from './private/admin/admin-layout/admin-layout.component';
 
 export const routes: Routes = [
   {
@@ -103,6 +104,33 @@ export const routes: Routes = [
         loadChildren: () =>
           import('./private/user/user-profile/user-profile.module').then(
             (m) => m.UserProfileModule
+          ),
+      },
+    ],
+  },
+  {
+    path: '',
+    component: AdminLayoutComponent,
+    children: [
+      {
+        path: 'admin-dashboard',
+        loadChildren: () =>
+          import('./private/admin/admin-dashboard/admin-dashboard.module').then(
+            (m) => m.AdminDashboardModule
+          ),
+      },
+      {
+        path: 'admin-profile',
+        loadChildren: () =>
+          import('./private/admin/profile/profile.module').then(
+            (m) => m.ProfileModule
+          ),
+      },
+      {
+        path: 'users-list',
+        loadChildren: () =>
+          import('./private/admin/users-list/users-list.module').then(
+            (m) => m.UsersListModule
           ),
       },
     ],
