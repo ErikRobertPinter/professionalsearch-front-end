@@ -1,0 +1,28 @@
+<div class="main">
+  <div class="frontline">
+    <div class="title">
+      <h1>ProfessionalSearch szakember kereső</h1>
+      <h3>Ahol megtalálod, aki Neked kell!</h3>
+    </div>
+    <div class="searchfield">
+      <form [formGroup]="searchForm" (ngSubmit)="search()">
+        <input
+          type="text"
+          placeholder="Szakember..."
+          formControlName="profession"
+        />
+        <input
+          type="text"
+          placeholder="Település"
+          formControlName="settlement"
+        /><button>Keresés</button>
+      </form>
+    </div>
+  </div>
+  <div class="professional-types">
+    <h1>Nálunk mindenkit megtalálsz!</h1>
+    <div class="container">
+      <div class="education"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="main">
+  @for (job of jobs; track $index) {
+  <div class="job">
+    <div class="picture"></div>
+    <div class="content">
+      <h3>{{ job.title }}</h3>
+    </div>
+  </div>
+  }
+</div>

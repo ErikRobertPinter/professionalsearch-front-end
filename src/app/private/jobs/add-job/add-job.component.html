@@ -1,0 +1,15 @@
+<form [formGroup]="addJob" (ngSubmit)="saveJob()">
+  <label for="title">Munka neve:</label><br />
+  <input type="text" formControlName="title" /><br />
+  <label for="title">Munka képek:</label><br />
+  <input type="file" (change)="uploadFile($event)" /><br />
+  <label for="address">Postai cím:</label><br />
+  <input type="text" formControlName="address" /><br />
+  <label for="customer">Ügyfél neve:</label><br />
+  <input type="text" formControlName="customer" /><br />
+  <label for="income">Bevétel:</label><br />
+  <input type="text" formControlName="income" /><br />
+  <label for="cost">Összes költség:</label><br />
+  <input type="text" formControlName="cost" /><br />
+  <button type="submit">Munka megadása</button>
+</form>

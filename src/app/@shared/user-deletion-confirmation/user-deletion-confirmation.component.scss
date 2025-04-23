@@ -1,0 +1,5 @@
+.buttons {
+    display: flex;
+  justify-content: flex-start; // vagy space-between, ha szét akarod húzni
+  gap: 1rem;
+}

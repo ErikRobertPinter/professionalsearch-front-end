@@ -1,0 +1,29 @@
+<div class="main">
+  <div class="menu">
+    <nav>
+      <ul>
+        <li *ngIf="userType">
+          <a routerLink="/dashboard">Kezdőlap</a>
+        </li>
+        <li
+          *ngIf="userType == 'professional' || userType == 'admin-professional'"
+        >
+          <a routerLink="/myjobs">Munkáim</a>
+        </li>
+        <li *ngIf="userType == 'admin' || userType == 'admin-professional'">
+          <a routerLink="/jobs-list">Munkák</a>
+        </li>
+        <li *ngIf="userType == 'admin' || userType == 'admin-professional'">
+          <a routerLink="/user-list">Felhasználók</a>
+        </li>
+        <li *ngIf="userType"><a routerLink="">Profil</a></li>
+        <li *ngIf="userType">
+          <a href="" (click)="logout()">Kijelentkezés</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

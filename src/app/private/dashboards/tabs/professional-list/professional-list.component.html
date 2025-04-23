@@ -1,0 +1,29 @@
+<form [formGroup]="searchForm" (ngSubmit)="search()">
+  <input
+    class="formInput"
+    type="text"
+    placeholder="Szakember..."
+    formControlName="profession"
+  />
+  <input
+    class="formInput"
+    type="text"
+    placeholder="Település"
+    formControlName="settlement"
+  /><button id="formSearchButton">Keresés</button>
+</form>
+<div class="main">
+  @for (professional of professionals; track $index) {
+  <div class="professional">
+    <div class="profilepic">
+      <h1>{{ professional.id }}</h1>
+    </div>
+    <div class="datas">
+      <h1>{{ professional.surname }} {{ professional.firstname }}</h1>
+      <button [routerLink]="['/professional-user-view', professional.id]">
+        Adatlap megtekintése
+      </button>
+    </div>
+  </div>
+  }
+</div>

@@ -1,0 +1,9 @@
+<div class="loading-datas" *ngIf="!professional"></div>
+<div class="userform" *ngIf="professional">
+  Név:<br />
+  {{ professional.surname }}{{ professional.firstname }}<br />
+  Email cím:<br />
+  {{ professional.email }}<br />
+  Telefonszám:<br />
+  {{ professional.phoneNumber }}
+</div>

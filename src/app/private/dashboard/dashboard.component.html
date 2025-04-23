@@ -1,0 +1,12 @@
+<ng-container *ngIf="userType == 'regular'">
+  <app-regular-dashboard></app-regular-dashboard>
+</ng-container>
+<ng-container *ngIf="userType == 'professional'">
+  <app-professional-dashboard></app-professional-dashboard>
+</ng-container>
+<ng-container *ngIf="userType == 'admin'">
+  <app-admin-dashboard></app-admin-dashboard>
+</ng-container>
+<ng-container *ngIf="userType == 'admin-professional'">
+  <app-admin-professional-dashboard></app-admin-professional-dashboard>
+</ng-container>
