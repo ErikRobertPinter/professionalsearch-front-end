@@ -46,5 +46,44 @@
         h1 {
             text-align: center;
         }
+        .stats {
+            margin-left: 10%;
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+
+            .signedupusers {
+                width: 28%;
+                background-color: aquamarine;
+                h1 {
+                    transition: all 0.3s ease;
+                  }
+                  h1 {
+                    text-align: center;
+                  }
+            }
+            .jobs {
+                width: 28%;
+                background-color: aquamarine;
+                h1 {
+                    transition: all 0.3s ease;
+                  }
+                  h1 {
+                    text-align: center;
+                  }
+            }
+            .professionals {
+                width: 28%;
+                background-color: aquamarine;
+                h1 {
+                    transition: all 0.3s ease;
+                  }
+                  h1 {
+                    text-align: center;
+                  }
+            }
+        }
+        
+        
     }
 } 

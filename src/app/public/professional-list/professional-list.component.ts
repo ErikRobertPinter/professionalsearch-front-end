@@ -9,6 +9,7 @@ interface Professional {
 
 @Component({
   selector: 'app-professional-list',
+  standalone: true,
   imports: [],
   templateUrl: './professional-list.component.html',
   styleUrl: './professional-list.component.scss',
