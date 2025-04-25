@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProfessionalParamsService } from '../../@shared/professional-params.service';
 
 interface Professional {
+  id: string;
   surname: string;
   firstname: string;
 }
@@ -19,8 +20,13 @@ export class ProfessionalListComponent {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private professionalService: ProfessionalParamsService
   ) {}
+
+  viewProfile(professionalId: string) {
+    this.router.navigate(['/professional-view', professionalId]);
+  }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {

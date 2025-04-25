@@ -1,7 +1,8 @@
 <div class="main">
   @for (professional of professionals; track $index) {
   <div class="professional">
-    <h1>{{ professional.surname }}</h1>
+    <h1>{{ professional.surname + " " + professional.firstname }}</h1>
+    <button (click)="viewProfile(professional.id)">Profil megtekintése</button>
   </div>
   }
 </div>

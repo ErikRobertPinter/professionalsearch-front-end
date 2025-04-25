@@ -22,6 +22,13 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'professional-view/:id',
+        loadChildren: () =>
+          import('./public/professional-view/professional-view.module').then(
+            (m) => m.ProfessionalViewModule
+          ),
+      },
+      {
         path: 'login',
         loadChildren: () =>
           import('./public/login/login.module').then((m) => m.LoginModule),
