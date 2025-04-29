@@ -47,10 +47,8 @@ export class AddJobComponent {
       error: (err) => {
         console.error('Hiba a munkák mentése során:', err);
 
-        // Itt például megjeleníthetsz egy felugró hibát vagy egy hibás státuszt:
         alert('Hiba történt a mentés közben!');
 
-        // Vagy logolhatod részletesebben:
         if (err.status === 422) {
           console.log('Validációs hiba:', err.error.errors);
         } else if (err.status === 500) {

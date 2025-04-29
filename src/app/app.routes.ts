@@ -36,9 +36,7 @@ export const routes: Routes = [
       {
         path: 'signup',
         loadChildren: () =>
-          import('./public/signup/signup.module').then(
-            (m) => m.SignupComponent
-          ),
+          import('./public/signup/signup.module').then((m) => m.SignupModule),
       },
       {
         path: 'forgot-password',

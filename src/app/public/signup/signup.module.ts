@@ -1,18 +1,14 @@
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { MatTabsModule } from '@angular/material/tabs';
-import { ProfessionalSignupFormComponent } from '../SignupForms/professional-signup-form/professional-signup-form.component';
-import { UserSignupFormComponent } from '../SignupForms/user-signup-form/user-signup-form.component';
 
-@Component({
-  selector: 'app-signup',
+import { SignupRoutingModule } from './signup-routing.module';
+
+
+@NgModule({
+  declarations: [],
   imports: [
     CommonModule,
-    MatTabsModule,
-    ProfessionalSignupFormComponent,
-    UserSignupFormComponent,
-  ],
-  templateUrl: './signup.component.html',
-  styleUrl: './signup.component.scss',
+    SignupRoutingModule
+  ]
 })
-export class SignupComponent {}
+export class SignupModule { }

@@ -1,1 +1,33 @@
-<p>professional-signup-form works!</p>
+<form [formGroup]="professionalProfile" (ngSubmit)="onSubmit()">
+  <label for="surname">Vezetéknév:</label><br />
+  <input name="surname" type="text" formControlName="surname" /><br />
+
+  <label for="firstname">Keresztnév:</label><br />
+  <input name="firstname" type="text" formControlName="firstname" /><br />
+
+  <label for="email">Email cím:</label><br />
+  <input name="email" type="text" formControlName="email" /><br />
+
+  <label for="phoneNumber">Telefonszám:</label><br />
+  <input name="phoneNumber" type="text" formControlName="phoneNumber" /><br />
+
+  <label for="pwd">Jelszó:</label><br />
+  <input name="pwd" type="text" formControlName="password" /><br />
+  <h2>Iskoláim</h2>
+  <h2>Szakmai tapasztalatok</h2>
+  <h3>Készségek</h3>
+  <div formArrayName="skills">
+    <div *ngFor="let skill of skills.controls; let i = index">
+      <label>
+        {{ i + 1 }}.
+        <input [formControlName]="i" placeholder="Szakma neve..." />
+        <input [formControlName]="i" placeholder="Iskola kezdete..." />
+        <input [formControlName]="i" placeholder="Megszerzési intézmény..." />
+      </label>
+      <button type="button" (click)="removeSkill(i)">Remove</button>
+    </div>
+  </div>
+  <button type="button" (click)="addSkill()">Add Skill</button>
+
+  <button type="submit">Regisztráció</button>
+</form>
