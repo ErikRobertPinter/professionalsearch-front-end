@@ -23,3 +23,13 @@
     </form>
   </div>
 </section>
+<section>
+  <h1>Korábban írták:</h1>
+  @for (opinion of opinions; track $index) {
+  <div class="previous_opinions">
+    <h3>{{ opinion.description }}</h3>
+    <h5>User_id: {{ opinion.user_id }}</h5>
+  </div>
+
+  }
+</section>

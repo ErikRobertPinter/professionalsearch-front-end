@@ -16,6 +16,12 @@ interface Professional {
   email: string;
   phoneNumber: string;
 }
+interface Opinion {
+  id: number;
+  user_id: number;
+  professional_id: number;
+  description: string;
+}
 @Component({
   selector: 'app-professional-view',
   imports: [CommonModule, ReactiveFormsModule],
@@ -25,6 +31,7 @@ interface Professional {
 export class ProfessionalViewComponent implements OnInit {
   professional_id: number = 0;
   professional: Professional | null = null;
+  opinions: Opinion[] = [];
   userid: number = 0;
   asdfg: string = '';
 
@@ -39,13 +46,22 @@ export class ProfessionalViewComponent implements OnInit {
       const id = params.get('id');
       if (id) {
         this.professional_id = +id;
+        this.http
+          .get<Professional>(`http://127.0.0.1:8000/api/user/${id}`)
+          .subscribe((datas) => {
+            console.log(datas);
+            this.professional = datas;
+          });
+        this.http
+          .get<Opinion[]>(
+            `http://127.0.0.1:8000/api/getratings/${this.professional_id}`
+          )
+          .subscribe((data) => {
+            this.opinions = data;
+            console.log(this.opinions);
+          });
       }
-      this.http
-        .get<Professional>(`http://127.0.0.1:8000/api/user/${id}`)
-        .subscribe((datas) => {
-          console.log(datas);
-          this.professional = datas;
-        });
+
       if (id) {
         this.userid = +id;
       }
