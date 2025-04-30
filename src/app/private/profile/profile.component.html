@@ -1,1 +1,50 @@
-<p>profile works!</p>
+<h1>Profilom</h1>
+<img src="./../../../assets/media/pictures/profilepic.jpg" alt="" />
+<form [formGroup]="profileForm" (ngSubmit)="updateProfile()">
+  <mat-form-field class="example-full-width">
+    <mat-label>Vezetéknév</mat-label>
+    <input matInput type="text" formControlName="surname" />
+  </mat-form-field>
+  <br />
+  <mat-form-field class="example-full-width">
+    <mat-label>Keresznév</mat-label>
+    <input matInput type="text" formControlName="firstname" />
+  </mat-form-field>
+  <br />
+  <mat-form-field class="example-full-width">
+    <mat-label>Email cím</mat-label>
+    <input matInput type="text" formControlName="email" />
+  </mat-form-field>
+  <br />
+  <mat-form-field class="example-full-width">
+    <mat-label>Telefonszám</mat-label>
+    <input matInput type="text" formControlName="phoneNumber" />
+  </mat-form-field>
+  <br />
+  <mat-form-field class="example-full-width">
+    <mat-label>Jelszó</mat-label>
+    <input matInput type="text" formControlName="password" />
+  </mat-form-field>
+  <br />
+  <h3>Végzettségeim:</h3>
+
+  <mat-accordion>
+    @for (profession of professions; track $index) {
+    <mat-expansion-panel
+      (opened)="panelOpenState.set(true)"
+      (closed)="panelOpenState.set(false)"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title> {{ profession.title }} </mat-panel-title>
+        <mat-panel-description>
+          {{ profession.training_center_name }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>{{ profession.description }}</p>
+    </mat-expansion-panel>
+    }
+  </mat-accordion>
+  <button (click)="addNewProfession()">Új hozzáadása</button>
+  <br />
+  <button type="submit">Módosítások mentése</button>
+</form>

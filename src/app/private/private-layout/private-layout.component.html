@@ -16,7 +16,7 @@
         <li *ngIf="userType == 'admin' || userType == 'admin-professional'">
           <a routerLink="/user-list">Felhasználók</a>
         </li>
-        <li *ngIf="userType"><a routerLink="">Profil</a></li>
+        <li *ngIf="userType"><a routerLink="/profile">Profil</a></li>
         <li *ngIf="userType">
           <a href="" (click)="logout()">Kijelentkezés</a>
         </li>

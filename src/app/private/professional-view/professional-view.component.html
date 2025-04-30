@@ -7,3 +7,19 @@
   Telefonszám:<br />
   {{ professional.phoneNumber }}
 </div>
+<section>
+  <div class="opinion">
+    <h1>Írj véleményt a szakemberről!</h1>
+    <form [formGroup]="giveOpinion" (ngSubmit)="addOpinion()">
+      <textarea
+        rows="4"
+        cols="60"
+        name="opinion"
+        id="opinion"
+        formControlName="opinion"
+      ></textarea
+      ><br />
+      <button type="submit">Vélemény beküldése</button>
+    </form>
+  </div>
+</section>

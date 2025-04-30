@@ -1,0 +1,17 @@
+<h1>Új végzettség hozzáadása</h1>
+<form [formGroup]="addNewProfession">
+  <label for="">Szak megnevezése</label><br />
+  <input type="text" formControlName="profession_name" /><br />
+  <label for="">Iskola megnevezése</label><br />
+  <input type="text" formControlName="school" /><br />
+  <label for="">Leírás</label><br />
+  <textarea
+    rows="4"
+    cols="60"
+    name="description"
+    id="description"
+    formControlName="description"
+  ></textarea
+  ><br />
+  <button (click)="addProfession()">Végzettség hozzáadása</button>
+</form>

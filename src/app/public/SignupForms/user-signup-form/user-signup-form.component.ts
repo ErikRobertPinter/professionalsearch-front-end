@@ -21,7 +21,7 @@ export class UserSignupFormComponent {
   onSubmit() {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Access: 'application/json', // ha szükséges
+      Access: 'application/json',
     });
     console.log(this.userProfile.value);
     this.http
@@ -31,11 +31,9 @@ export class UserSignupFormComponent {
       .subscribe({
         next: (res) => {
           console.log('Regisztráció sikeres!', res);
-          // esetleg irányítás pl. this.router.navigate(['/login']);
         },
         error: (err) => {
           console.error('Hiba történt:', err);
-          // mutathatsz errort a felhasználónak
         },
       });
   }

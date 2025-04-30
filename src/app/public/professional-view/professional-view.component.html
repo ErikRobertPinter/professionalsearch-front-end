@@ -3,4 +3,18 @@
   <h1>{{ professional.surname + " " + professional.firstname }}</h1>
   <h2>{{ professional.email }}</h2>
   <h2>{{ professional.phoneNumber }}</h2>
+  <section>
+    <div class="opinion">
+      <h1>Írj véleményt a szakemberről!</h1>
+      <form [formGroup]="giveOpinion" (ngSubmit)="addOpinion()">
+        <textarea
+          name="opinion"
+          id="opinion"
+          formControlName="opinion"
+        ></textarea
+        ><br /><br />
+        <button type="submit">Vélemény beküldése</button>
+      </form>
+    </div>
+  </section>
 </div>

@@ -1,5 +1,11 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 
 export interface Professional {
@@ -12,24 +18,39 @@ export interface Professional {
 
 @Component({
   selector: 'app-professional-view',
-  imports: [],
+  standalone: true,
+  imports: [ReactiveFormsModule],
   templateUrl: './professional-view.component.html',
   styleUrl: './professional-view.component.scss',
 })
 export class ProfessionalViewComponent implements OnInit {
+  professional_id: number = 0;
   professional!: Professional;
-  /*surname: string = 'Pintér';
-  firstname: string = 'Erik Róbert';
-  emailAddress: string = 'erikrobert.pinter@stormarketingroup.com';
-  phoneNumber: string = '06-20/443-9867';*/
+
+  giveOpinion = new FormGroup({
+    opinion: new FormControl('', Validators.required),
+  });
+
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
   ngOnInit(): void {
-    const userId = this.route.snapshot.paramMap.get('id');
+    this.professional_id = Number(this.route.snapshot.paramMap.get('id'));
     this.http
-      .get<Professional>(`http://127.0.0.1:8000/api/user/${userId}`)
+      .get<Professional>(
+        `http://127.0.0.1:8000/api/user/${this.professional_id}`
+      )
       .subscribe((data) => {
         this.professional = data;
       });
+  }
+
+  addOpinion(): void {
+    const user_id = localStorage.getItem('userId');
+    const payLoad = {
+      user_id: Number(user_id),
+      professional_id: this.professional_id,
+      description: this.giveOpinion.value.opinion,
+    };
+    this.http.post('http://127.0.0.1:8000/api/addrating', payLoad).subscribe();
   }
 }

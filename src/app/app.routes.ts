@@ -90,7 +90,10 @@ export const routes: Routes = [
       },
       {
         path: 'profile',
-        component: ProfileComponent,
+        loadChildren: () =>
+          import('./private/profile/profile.module').then(
+            (m) => m.ProfileModule
+          ),
       },
       {
         path: 'professional-user-view/:id',
