@@ -1,4 +1,4 @@
-<form [formGroup]="professionalProfile" (ngSubmit)="onSubmit()">
+<!--<form [formGroup]="professionalProfile" (ngSubmit)="onSubmit()">
   <label for="surname">Vezetéknév:</label><br />
   <input name="surname" type="text" formControlName="surname" /><br />
 
@@ -30,4 +30,106 @@
   <button type="button" (click)="addSkill()">Add Skill</button>
 
   <button type="submit">Regisztráció</button>
+</form>
+-->
+<form [formGroup]="professionalSignup" (ngSubmit)="onSubmit()">
+  <h2>Alapadatok</h2>
+  <label>
+    Vezetéknév:
+    <input formControlName="lastName" type="text" />
+  </label>
+  <label>
+    Keresztnév:
+    <input formControlName="firstName" type="text" />
+  </label>
+  <label>
+    Email:
+    <input formControlName="email" type="email" />
+  </label>
+  <label>
+    Telefonszám:
+    <input formControlName="phone" type="tel" />
+  </label>
+  <label>
+    Jelszó:
+    <input formControlName="password" type="password" />
+  </label>
+
+  <h2>Tanulmányok</h2>
+  <div formArrayName="education">
+    <div
+      *ngFor="let edu of education.controls; let i = index"
+      [formGroupName]="i"
+    >
+      <label>
+        Mettől - Év:
+        <input formControlName="year_from" type="text" placeholder="pl. 2020" />
+      </label>
+      <label>
+        Mettől - Hónap:
+        <input formControlName="month_from" type="text" placeholder="pl. 09" />
+      </label>
+      <label>
+        Meddig - Év:
+        <input formControlName="year_to" type="text" placeholder="pl. 2022" />
+      </label>
+      <label>
+        Meddig - Hónap:
+        <input formControlName="month_to" type="text" placeholder="pl. 06" />
+      </label>
+      <label>
+        Intézmény:
+        <input formControlName="institution" type="text" />
+      </label>
+      <label>
+        Szakma:
+        <input formControlName="profession" type="text" />
+      </label>
+      <button
+        type="button"
+        (click)="removeEducation(i)"
+        *ngIf="education.length > 1"
+      >
+        ❌ Törlés
+      </button>
+      <hr />
+    </div>
+    <button type="button" (click)="addEducation()">
+      Új tanulmány hozzáadása
+    </button>
+  </div>
+
+  <h2>Szolgáltatások és árak</h2>
+  <div formArrayName="services">
+    <div
+      *ngFor="let service of services.controls; let j = index"
+      [formGroupName]="j"
+    >
+      <label>
+        Munka típusa:
+        <input formControlName="workType" type="text" />
+      </label>
+      <label>
+        Egység (pl. m², db):
+        <input formControlName="unit" type="text" />
+      </label>
+      <label>
+        Ár (Ft):
+        <input formControlName="price" type="number" />
+      </label>
+      <button
+        type="button"
+        (click)="removeService(j)"
+        *ngIf="services.length > 1"
+      >
+        ❌ Törlés
+      </button>
+      <hr />
+    </div>
+    <button type="button" (click)="addService()">
+      ➕ Új szolgáltatás hozzáadása
+    </button>
+  </div>
+
+  <button type="submit">✔️ Regisztráció</button>
 </form>

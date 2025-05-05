@@ -15,6 +15,11 @@ export const routes: Routes = [
           import('./public/home/home.module').then((m) => m.HomeModule),
       },
       {
+        path: 'faq',
+        loadChildren: () =>
+          import('./public/gyik/gyik.module').then((m) => m.GyikModule),
+      },
+      {
         path: 'professional-list',
         loadChildren: () =>
           import('./public/professional-list/professional-list.module').then(

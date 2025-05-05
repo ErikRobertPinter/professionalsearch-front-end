@@ -1,0 +1,73 @@
+form {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    background-color: #fafafa;
+  
+    h2 {
+      margin-top: 1.5rem;
+      font-size: 1.3rem;
+      color: #333;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.3rem;
+    }
+  
+    label {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+      font-weight: 500;
+      color: #222;
+  
+      input {
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+        margin-top: 0.3rem;
+  
+        &:focus {
+          outline: none;
+          border-color: #007bff;
+          box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+        }
+      }
+  
+      input.ng-invalid.ng-touched {
+        border-color: red;
+        background-color: #ffe5e5;
+      }
+    }
+  
+    button {
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 0.5rem;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: #0056b3;
+      }
+  
+      &.danger {
+        background-color: #dc3545;
+  
+        &:hover {
+          background-color: #a71d2a;
+        }
+      }
+    }
+  
+    hr {
+      margin: 1.5rem 0;
+      border: none;
+      border-top: 1px solid #ccc;
+    }
+  }
