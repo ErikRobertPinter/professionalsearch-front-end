@@ -39,6 +39,13 @@ export const routes: Routes = [
           import('./public/login/login.module').then((m) => m.LoginModule),
       },
       {
+        path: 'contact',
+        loadChildren: () =>
+          import('./public/contact/contact.module').then(
+            (m) => m.ContactModule
+          ),
+      },
+      {
         path: 'signup',
         loadChildren: () =>
           import('./public/signup/signup.module').then((m) => m.SignupModule),
