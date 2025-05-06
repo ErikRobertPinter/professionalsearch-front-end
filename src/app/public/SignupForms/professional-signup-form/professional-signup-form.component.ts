@@ -25,8 +25,8 @@ export class ProfessionalSignupFormComponent implements OnInit {
       lastName: ['', Validators.required],
       firstName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      phoneNumber: ['', Validators.required],
+      password: ['', [Validators.required]],
 
       // Oktatás (több elem is lehet)
       education: this.fb.array([this.createEducationGroup()]),

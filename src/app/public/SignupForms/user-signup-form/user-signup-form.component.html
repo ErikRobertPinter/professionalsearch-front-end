@@ -1,28 +1,51 @@
-<form [formGroup]="userProfile" (ngSubmit)="onSubmit()">
-  <label for="surname">Vezetéknév:</label><br />
-  <input
-    id="surname"
-    name="surname"
-    type="text"
-    formControlName="surname"
-  /><br />
-  <label for="firstname">Keresztnév:</label><br />
-  <input
-    id="firstname"
-    name="firstname"
-    type="text"
-    formControlName="firstname"
-  /><br />
-  <label for="email">Email cím:</label><br />
-  <input id="email" name="email" type="text" formControlName="email" /><br />
-  <label for="phoneNumber">Telefonszám</label><br />
-  <input
-    id="phoneNumber"
-    name="phoneNumber"
-    type="text"
-    formControlName="phoneNumber"
-  /><br />
-  <label for="pwd">Jelszó:</label><br />
-  <input id="pwd" name="pwd" type="text" formControlName="password" /><br />
-  <button type="submit">Regisztráció</button>
-</form>
+<div class="panel">
+  <form [formGroup]="userProfile" (ngSubmit)="onSubmit()">
+    <input
+      id="surname"
+      name="surname"
+      type="text"
+      autocomplete="on"
+      placeholder="Vezetéknév"
+      formControlName="surname"
+    /><br />
+    <input
+      id="firstname"
+      name="firstname"
+      type="text"
+      autocomplete="on"
+      placeholder="Keresztnév"
+      formControlName="password"
+    /><br />
+    <!--<input
+      id="profile_picture"
+      name="profile_picture"
+      type="file"
+      formControlName="profile_picture"
+    /><br />-->
+    <input
+      id="email"
+      name="email"
+      type="text"
+      autocomplete="on"
+      placeholder="Email cím"
+      formControlName="email"
+    /><br />
+    <input
+      id="phoneNumber"
+      name="phoneNumber"
+      type="text"
+      autocomplete="on"
+      placeholder="Telefonszám"
+      formControlName="phoneNumber"
+    /><br />
+    <input
+      id="password"
+      name="password"
+      type="password"
+      autocomplete="on"
+      placeholder="Jelszó"
+      formControlName="password"
+    /><br />
+    <button type="submit">Regisztráció</button>
+  </form>
+</div>

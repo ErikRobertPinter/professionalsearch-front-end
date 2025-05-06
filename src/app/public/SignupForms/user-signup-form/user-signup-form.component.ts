@@ -14,6 +14,7 @@ export class UserSignupFormComponent {
   userProfile = new FormGroup({
     surname: new FormControl(''),
     firstname: new FormControl(''),
+    //profile_picture: new FormControl(''),
     email: new FormControl(''),
     phoneNumber: new FormControl(''),
     password: new FormControl(''),
