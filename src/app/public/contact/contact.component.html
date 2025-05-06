@@ -1,1 +1,51 @@
-<p>contact works!</p>
+<div class="main">
+  <h1>Kapcsolat</h1>
+  <div class="contactform">
+    <form [formGroup]="contact">
+      <input
+        name="surname"
+        id="surname"
+        type="text"
+        placeholder="Vezetéknév..."
+        formControlName="surname"
+      />
+      <input
+        name="firstname"
+        id="firstname"
+        type="text"
+        placeholder="Keresztnév..."
+        formControlName="firstname"
+      />
+      <br />
+      <input
+        name="email"
+        id="email"
+        type="text"
+        placeholder="Email cím..."
+        formControlName="email"
+      />
+      <input
+        name="phoneNumber"
+        id="phoneNumber"
+        type="text"
+        placeholder="Telefonszám..."
+        formControlName="phoneNumber"
+      /><br />
+      <input
+        name="subject"
+        id="subject"
+        type="text"
+        placeholder="Tárgy..."
+        formControlName="subject"
+      /><br />
+      <textarea
+        name="message"
+        id="message"
+        placeholder="Írja ide üzenetét..."
+        formControlName="message"
+      ></textarea>
+      <br />
+      <button type="submit">Üzenet küldése</button>
+    </form>
+  </div>
+</div>

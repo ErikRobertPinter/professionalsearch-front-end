@@ -1,21 +1,21 @@
 <div class="main">
+  <h1>Bejelentkezés</h1>
   <div class="panel">
-    <h1>Bejelentkezés</h1>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <label for="email">Email cím:</label><br />
       <input
         id="email"
         name="email"
         type="text"
         autocomplete="on"
+        placeholder="Email cím"
         formControlName="email"
       /><br />
-      <label for="pwd">Jelszó:</label><br />
       <input
         id="pwd"
         name="pwd"
         type="text"
         autocomplete="on"
+        placeholder="Jelszó"
         formControlName="password"
       /><br />
       <button type="submit">Bejelentkezés</button>
